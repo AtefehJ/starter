@@ -1,0 +1,176 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 10px;
+}
+
+body{
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    /*font-size: 14px;*/
+    line-height: 1.7;
+    color: #777;
+    padding: 3rem;
+}
+
+.header{
+    height: 95vh;
+    background-image: linear-gradient(
+    to right,
+    rgba(177, 59, 104, 0.699),
+    rgba(216, 141, 153, 0.8)),
+    url(../img/hero.jpg);
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    position: relative;
+}
+
+.logo-box{
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+}
+
+.logo{
+ height: 3.5rem;
+}
+
+.text-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.heading-primary{
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.heading-primary-main{
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 5s;
+    animation-delay: 1s;
+}
+
+.heading-primary-sub{
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 2rem;
+    animation-name: moveInRight;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    margin-bottom: 4rem;
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    100%{
+       opacity:1;
+       transform: translate(0);
+    }
+
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity:0;
+        transform: translateX(10rem);
+    }
+
+    100%{
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
+.btn:link,
+.btn:visited{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4rem;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.2);
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+}
+
+
+.btn-white{
+font-size: 1.4rem;    
+background-color: #fff;
+color:#777;
+}
+
+.btn::after{
+    content:"";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after{
+    background-color: #fff;
+}
+
+.btn:hover::after{
+    transform: scaleX(1.4) ScaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes moveInBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    
+    100%{
+        opacity:1;
+        transform: translate(0);
+    }
+}
+
+
+.btn-animated{
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
